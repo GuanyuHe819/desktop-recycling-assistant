@@ -1,0 +1,12 @@
+{
+  "broker": "127.0.0.1",
+  "port": 1883,
+  "topic_root": "eie3127/recycling/change-this-unique-id",
+  "camera_index": 0,
+  "bin_labels": ["paper", "plastic", "metal", "cardboard", "textile"],
+  "confidence_threshold": 0.85,
+  "stable_frames": 8,
+  "board_timeout_seconds": 6,
+  "model_file": "models/2026-11-18-dataset-baseline/keras_model.h5",
+  "labels_file": "models/2026-11-18-dataset-baseline/labels.txt"
+}

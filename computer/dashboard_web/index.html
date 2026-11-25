@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>AI-Enabled Desktop Recycling Assistant</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/dashboard.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="course"><strong>Recycling station</strong><span>EIE3127</span></div>
+    <div class="header-actions">
+      <span id="sample-badge" class="sample-badge" hidden>Simulation</span>
+      <button id="guide-open" class="text-button" type="button">Setup guide</button>
+      <button id="fullscreen" class="text-button" type="button" hidden>Full screen</button>
+    </div>
+  </header>
+
+  <main class="sheet">
+    <div class="title-row">
+      <div>
+        <h1>AI-Enabled Desktop Recycling Assistant</h1>
+        <p id="session-state" class="subtitle">Connecting to the station</p>
+      </div>
+      <div class="title-actions">
+        <div id="model-controls" class="model-controls" hidden>
+          <label for="model-select">Recognition model</label>
+          <select id="model-select" aria-describedby="model-note" disabled></select>
+        </div>
+        <button id="round-action" class="primary" type="button" disabled>Start sorting</button>
+      </div>
+    </div>
+    <p id="model-note" class="model-note" role="status" hidden></p>
+
+    <div class="system-strip" role="group" aria-label="Equipment status">
+      <div class="system-item"><span>Camera</span><strong id="camera-state" class="device">Starting</strong></div>
+      <div class="system-item"><span>MQTT broker</span><strong id="broker-state" class="device">Connecting</strong></div>
+      <div class="system-item"><span>Arduino</span><strong id="board-state" class="device">Connecting</strong></div>
+    </div>
+    <p id="alert" class="alert" role="status" hidden></p>
+
+    <div class="work-grid">
+      <section class="panel camera-panel" aria-labelledby="camera-title">
+        <div class="panel-head">
+          <h2 id="camera-title">Sort an item</h2>
+          <span id="recognition-state" class="minor-state">Waiting for camera</span>
+        </div>
+        <div class="next-action" id="next-action" data-tone="neutral">
+          <div class="next-text">
+            <span class="field-label" id="cue-label">Next step</span>
+            <strong id="next-title" role="status">Waiting for equipment</strong>
+            <span id="next-detail">Connect to the hotspot and turn on the Arduino.</span>
+          </div>
+        </div>
+        <div class="viewfinder">
+          <img id="camera-feed" alt="Live camera feed for material recognition" hidden>
+          <div id="camera-placeholder" class="camera-placeholder">
+            <span class="viewfinder-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <p id="camera-message">Loading the recognition model</p>
+          </div>
+        </div>
+        <div class="prediction">
+          <div>
+            <span class="field-label">Prediction</span>
+            <strong id="prediction-label" class="prediction-label">–</strong>
+          </div>
+          <div class="confidence">
+            <div><span class="field-label">Confidence</span><strong id="prediction-score">–</strong></div>
+            <progress id="confidence-bar" max="1" value="0" aria-label="Model confidence"></progress>
+          </div>
+        </div>
+        <ol id="port-list" class="ports" aria-label="Physical bins in order"></ol>
+      </section>
+
+      <section class="panel stats-panel" aria-labelledby="stats-title">
+        <div class="panel-head">
+          <h2 id="stats-title">Sorting activity</h2>
+          <span id="session-model" class="minor-state session-model" hidden></span>
+        </div>
+        <dl class="metrics">
+          <div><dt>Confirmed drops</dt><dd id="total">0</dd></div>
+          <div><dt>Matched</dt><dd id="matched">0</dd></div>
+          <div><dt>Mismatched</dt><dd id="mismatch">0</dd></div>
+        </dl>
+        <div class="match-bar" aria-hidden="true"><span id="match-segment"></span><span id="mismatch-segment"></span></div>
+        <p id="match-note" class="match-note">Match rate appears after the first confirmed drop.</p>
+
+        <section class="distribution" aria-labelledby="distribution-title">
+          <div class="chart-head">
+            <h3 id="distribution-title">Drops by bin</h3>
+            <div class="chart-switch" role="group" aria-label="Choose how to group confirmed drops">
+              <button type="button" data-basis="observed" aria-pressed="true">Triggered</button>
+              <button type="button" data-basis="recommended" aria-pressed="false">Recommended</button>
+            </div>
+          </div>
+          <ol id="distribution-bars" class="bars" aria-label="Confirmed drops by triggered bin"></ol>
+        </section>
+        <section class="results" aria-labelledby="recent-title">
+          <h3 id="recent-title">Recent activity</h3>
+          <p id="results-empty" class="result-empty">No activity recorded this session.</p>
+          <table id="results-table" hidden>
+            <thead><tr><th scope="col">Time</th><th scope="col">Recommended</th><th scope="col">Triggered</th><th scope="col">Outcome</th></tr></thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <dialog id="guide" aria-labelledby="guide-title">
+    <div class="guide-head">
+      <h2 id="guide-title">Setup guide</h2>
+      <form method="dialog"><button type="submit" autofocus>Close</button></form>
+    </div>
+    <ol class="guide-steps">
+      <li><strong>Join the 2.4 GHz hotspot</strong><p>Connect the computer and Arduino to the same phone hotspot. On iPhone, enable Maximize Compatibility.</p></li>
+      <li><strong>Open the dashboard</strong><p>Double-click <code>3_启动课堂Dashboard.bat</code> and keep the launcher window open. If the hotspot details or the computer’s IPv4 address changed, re-upload the existing sketch through Arduino IDE.</p></li>
+      <li><strong>Choose a recognition model</strong><p>To add a Teachable Machine Keras export, put <code>keras_model.h5</code> and <code>labels.txt</code> together in a new folder under <code>models/</code>. Select it before starting a session.</p></li>
+      <li><strong>Start sorting</strong><p>When the camera is live, MQTT is connected and Arduino says Ready, select <b>Start sorting</b>. Hold the camera on an empty scene first, then show one item.</p></li>
+      <li><strong>Wait for the green light</strong><p>Bring the item or your hand within about 10 cm of the lit bin’s sensor. After the result appears, clear the camera and the bins before the next item.</p></li>
+    </ol>
+    <div class="guide-foot">
+      <p><b>End session</b> lets the current drop finish. Refreshing keeps the session. Starting a new session or restarting the dashboard resets the totals and preserves the CSV log.</p>
+      <p>A match means the sensor that fired was in the recommended bin. The camera model predicts the material.</p>
+    </div>
+  </dialog>
+</body>
+</html>

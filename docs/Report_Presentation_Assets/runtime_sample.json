@@ -1,0 +1,20 @@
+{
+  "tensorflow": "2.15.1",
+  "threads_inter": 2,
+  "threads_intra": 4,
+  "batch_size": 1,
+  "mode": "Keras model.predict on one already preprocessed image, warm CPU",
+  "max_score_delta_against_evaluation": 4.172325134277344e-07,
+  "models": {
+    "baseline": {
+      "calls": 72,
+      "p50_ms": 36.44975007046014,
+      "p95_ms": 39.267004997236654
+    },
+    "augmented": {
+      "calls": 72,
+      "p50_ms": 36.300099978689104,
+      "p95_ms": 38.269880018197
+    }
+  }
+}

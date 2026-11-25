@@ -1,0 +1,11 @@
++.venv/
+__pycache__/
+*.pyc
+computer/config.json
+computer/*.local.json
+firmware/recycling_controller/secrets.h
+logs/
+data/*
+!data/TeachableMachine_*/
+data/TeachableMachine_*/*
+!data/TeachableMachine_*/来源清单.csv

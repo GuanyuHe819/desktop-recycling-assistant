@@ -1,0 +1,848 @@
+{
+  "models": {
+    "baseline": {
+      "folder": "2026-11-18-dataset-baseline",
+      "weights_sha256": "86d11e302b8bb45f5206ad77ba03be495274941fc80fc52809ae5e2aafb4be78",
+      "labels_sha256": "a050905e1c9d1658f9e9b96735ea5ca7a4347dbbbb4aaf2802a5bdd0d2de8b67"
+    },
+    "augmented": {
+      "folder": "2026-11-22-my-samples",
+      "weights_sha256": "60befb8cd0d33c7a2c3cf0694b2825c4960ee56b4cfe9a2fb0d59be1b4f4ee47",
+      "labels_sha256": "a050905e1c9d1658f9e9b96735ea5ca7a4347dbbbb4aaf2802a5bdd0d2de8b67"
+    }
+  },
+  "label_order": [
+    "paper",
+    "plastic",
+    "metal",
+    "cardboard",
+    "textile",
+    "empty"
+  ],
+  "exclusions": {
+    "documented_selection_or_exact_exposure": 935,
+    "near_duplicate_to_exposure_dhash_le4": 3
+  },
+  "cohorts": {
+    "public_candidate": {
+      "baseline": {
+        "n": 2052,
+        "correct": 838,
+        "accuracy": 0.4083820662768031,
+        "macro_f1": 0.40375108279140404,
+        "classes": {
+          "paper": {
+            "n": 322,
+            "correct": 152,
+            "recall": 0.4720496894409938,
+            "precision": 0.30158730158730157,
+            "f1": 0.36803874092009686
+          },
+          "plastic": {
+            "n": 811,
+            "correct": 229,
+            "recall": 0.28236744759556104,
+            "precision": 0.6676384839650146,
+            "f1": 0.3968804159445407
+          },
+          "metal": {
+            "n": 593,
+            "correct": 251,
+            "recall": 0.42327150084317033,
+            "precision": 0.49604743083003955,
+            "f1": 0.456778889899909
+          },
+          "cardboard": {
+            "n": 191,
+            "correct": 126,
+            "recall": 0.6596858638743456,
+            "precision": 0.3058252427184466,
+            "f1": 0.417910447761194
+          },
+          "textile": {
+            "n": 135,
+            "correct": 80,
+            "recall": 0.5925925925925926,
+            "precision": 0.2787456445993031,
+            "f1": 0.3791469194312796
+          }
+        },
+        "thresholds": [
+          {
+            "threshold": 0.7,
+            "accepted_material": 1725,
+            "accepted_correct": 748,
+            "accepted_wrong": 977,
+            "accepted_empty": 0,
+            "coverage": 0.8406432748538012,
+            "accuracy_on_accepted": 0.4336231884057971,
+            "correct_material_yield": 0.3645224171539961
+          },
+          {
+            "threshold": 0.8,
+            "accepted_material": 1591,
+            "accepted_correct": 697,
+            "accepted_wrong": 894,
+            "accepted_empty": 0,
+            "coverage": 0.7753411306042886,
+            "accuracy_on_accepted": 0.4380892520427404,
+            "correct_material_yield": 0.33966861598440545
+          },
+          {
+            "threshold": 0.85,
+            "accepted_material": 1508,
+            "accepted_correct": 669,
+            "accepted_wrong": 839,
+            "accepted_empty": 0,
+            "coverage": 0.7348927875243665,
+            "accuracy_on_accepted": 0.4436339522546419,
+            "correct_material_yield": 0.3260233918128655
+          },
+          {
+            "threshold": 0.9,
+            "accepted_material": 1399,
+            "accepted_correct": 630,
+            "accepted_wrong": 769,
+            "accepted_empty": 0,
+            "coverage": 0.6817738791423001,
+            "accuracy_on_accepted": 0.4503216583273767,
+            "correct_material_yield": 0.30701754385964913
+          },
+          {
+            "threshold": 0.95,
+            "accepted_material": 1226,
+            "accepted_correct": 572,
+            "accepted_wrong": 654,
+            "accepted_empty": 0,
+            "coverage": 0.5974658869395711,
+            "accuracy_on_accepted": 0.466557911908646,
+            "correct_material_yield": 0.2787524366471735
+          }
+        ],
+        "confusion": [
+          [
+            152,
+            9,
+            10,
+            129,
+            22,
+            0
+          ],
+          [
+            184,
+            229,
+            202,
+            105,
+            91,
+            0
+          ],
+          [
+            140,
+            85,
+            251,
+            36,
+            81,
+            0
+          ],
+          [
+            14,
+            17,
+            21,
+            126,
+            13,
+            0
+          ],
+          [
+            14,
+            3,
+            22,
+            16,
+            80,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "augmented": {
+        "n": 2052,
+        "correct": 814,
+        "accuracy": 0.3966861598440546,
+        "macro_f1": 0.39162497787222816,
+        "classes": {
+          "paper": {
+            "n": 322,
+            "correct": 147,
+            "recall": 0.45652173913043476,
+            "precision": 0.3,
+            "f1": 0.3620689655172414
+          },
+          "plastic": {
+            "n": 811,
+            "correct": 217,
+            "recall": 0.2675709001233046,
+            "precision": 0.7,
+            "f1": 0.3871543264942016
+          },
+          "metal": {
+            "n": 593,
+            "correct": 240,
+            "recall": 0.40472175379426645,
+            "precision": 0.4897959183673469,
+            "f1": 0.44321329639889195
+          },
+          "cardboard": {
+            "n": 191,
+            "correct": 126,
+            "recall": 0.6596858638743456,
+            "precision": 0.2971698113207547,
+            "f1": 0.4097560975609756
+          },
+          "textile": {
+            "n": 135,
+            "correct": 84,
+            "recall": 0.6222222222222222,
+            "precision": 0.24925816023738873,
+            "f1": 0.3559322033898305
+          }
+        },
+        "thresholds": [
+          {
+            "threshold": 0.7,
+            "accepted_material": 1776,
+            "accepted_correct": 730,
+            "accepted_wrong": 1046,
+            "accepted_empty": 1,
+            "coverage": 0.8654970760233918,
+            "accuracy_on_accepted": 0.41103603603603606,
+            "correct_material_yield": 0.3557504873294347
+          },
+          {
+            "threshold": 0.8,
+            "accepted_material": 1640,
+            "accepted_correct": 688,
+            "accepted_wrong": 952,
+            "accepted_empty": 1,
+            "coverage": 0.7992202729044834,
+            "accuracy_on_accepted": 0.4195121951219512,
+            "correct_material_yield": 0.33528265107212474
+          },
+          {
+            "threshold": 0.85,
+            "accepted_material": 1566,
+            "accepted_correct": 660,
+            "accepted_wrong": 906,
+            "accepted_empty": 1,
+            "coverage": 0.7631578947368421,
+            "accuracy_on_accepted": 0.421455938697318,
+            "correct_material_yield": 0.3216374269005848
+          },
+          {
+            "threshold": 0.9,
+            "accepted_material": 1469,
+            "accepted_correct": 628,
+            "accepted_wrong": 841,
+            "accepted_empty": 1,
+            "coverage": 0.7158869395711501,
+            "accuracy_on_accepted": 0.427501701837985,
+            "correct_material_yield": 0.3060428849902534
+          },
+          {
+            "threshold": 0.95,
+            "accepted_material": 1319,
+            "accepted_correct": 582,
+            "accepted_wrong": 737,
+            "accepted_empty": 1,
+            "coverage": 0.6427875243664717,
+            "accuracy_on_accepted": 0.44124336618650495,
+            "correct_material_yield": 0.28362573099415206
+          }
+        ],
+        "confusion": [
+          [
+            147,
+            4,
+            9,
+            126,
+            36,
+            0
+          ],
+          [
+            188,
+            217,
+            199,
+            112,
+            94,
+            1
+          ],
+          [
+            126,
+            78,
+            240,
+            46,
+            103,
+            0
+          ],
+          [
+            14,
+            10,
+            21,
+            126,
+            20,
+            0
+          ],
+          [
+            15,
+            1,
+            21,
+            14,
+            84,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "supplement_replay": {
+      "baseline": {
+        "n": 1004,
+        "correct": 163,
+        "accuracy": 0.16235059760956175,
+        "macro_f1": 0.22554678192447292,
+        "classes": {
+          "paper": {
+            "n": 180,
+            "correct": 35,
+            "recall": 0.19444444444444445,
+            "precision": 0.4117647058823529,
+            "f1": 0.2641509433962264
+          },
+          "plastic": {
+            "n": 199,
+            "correct": 19,
+            "recall": 0.09547738693467336,
+            "precision": 0.9047619047619048,
+            "f1": 0.17272727272727273
+          },
+          "metal": {
+            "n": 188,
+            "correct": 0,
+            "recall": 0.0,
+            "precision": null,
+            "f1": 0.0
+          },
+          "cardboard": {
+            "n": 205,
+            "correct": 11,
+            "recall": 0.05365853658536585,
+            "precision": 0.5,
+            "f1": 0.09691629955947137
+          },
+          "textile": {
+            "n": 232,
+            "correct": 98,
+            "recall": 0.4224137931034483,
+            "precision": 1.0,
+            "f1": 0.593939393939394
+          }
+        },
+        "thresholds": [
+          {
+            "threshold": 0.7,
+            "accepted_material": 169,
+            "accepted_correct": 120,
+            "accepted_wrong": 49,
+            "accepted_empty": 713,
+            "coverage": 0.16832669322709162,
+            "accuracy_on_accepted": 0.7100591715976331,
+            "correct_material_yield": 0.11952191235059761
+          },
+          {
+            "threshold": 0.8,
+            "accepted_material": 144,
+            "accepted_correct": 103,
+            "accepted_wrong": 41,
+            "accepted_empty": 671,
+            "coverage": 0.14342629482071714,
+            "accuracy_on_accepted": 0.7152777777777778,
+            "correct_material_yield": 0.10258964143426295
+          },
+          {
+            "threshold": 0.85,
+            "accepted_material": 131,
+            "accepted_correct": 93,
+            "accepted_wrong": 38,
+            "accepted_empty": 646,
+            "coverage": 0.13047808764940239,
+            "accuracy_on_accepted": 0.7099236641221374,
+            "correct_material_yield": 0.09262948207171315
+          },
+          {
+            "threshold": 0.9,
+            "accepted_material": 111,
+            "accepted_correct": 80,
+            "accepted_wrong": 31,
+            "accepted_empty": 619,
+            "coverage": 0.11055776892430279,
+            "accuracy_on_accepted": 0.7207207207207207,
+            "correct_material_yield": 0.0796812749003984
+          },
+          {
+            "threshold": 0.95,
+            "accepted_material": 75,
+            "accepted_correct": 53,
+            "accepted_wrong": 22,
+            "accepted_empty": 568,
+            "coverage": 0.07470119521912351,
+            "accuracy_on_accepted": 0.7066666666666667,
+            "correct_material_yield": 0.052788844621513946
+          }
+        ],
+        "confusion": [
+          [
+            35,
+            0,
+            0,
+            5,
+            0,
+            140
+          ],
+          [
+            0,
+            19,
+            0,
+            0,
+            0,
+            180
+          ],
+          [
+            2,
+            2,
+            0,
+            3,
+            0,
+            181
+          ],
+          [
+            47,
+            0,
+            0,
+            11,
+            0,
+            147
+          ],
+          [
+            1,
+            0,
+            0,
+            3,
+            98,
+            130
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "augmented": {
+        "n": 1004,
+        "correct": 1004,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "classes": {
+          "paper": {
+            "n": 180,
+            "correct": 180,
+            "recall": 1.0,
+            "precision": 1.0,
+            "f1": 1.0
+          },
+          "plastic": {
+            "n": 199,
+            "correct": 199,
+            "recall": 1.0,
+            "precision": 1.0,
+            "f1": 1.0
+          },
+          "metal": {
+            "n": 188,
+            "correct": 188,
+            "recall": 1.0,
+            "precision": 1.0,
+            "f1": 1.0
+          },
+          "cardboard": {
+            "n": 205,
+            "correct": 205,
+            "recall": 1.0,
+            "precision": 1.0,
+            "f1": 1.0
+          },
+          "textile": {
+            "n": 232,
+            "correct": 232,
+            "recall": 1.0,
+            "precision": 1.0,
+            "f1": 1.0
+          }
+        },
+        "thresholds": [
+          {
+            "threshold": 0.7,
+            "accepted_material": 1003,
+            "accepted_correct": 1003,
+            "accepted_wrong": 0,
+            "accepted_empty": 0,
+            "coverage": 0.999003984063745,
+            "accuracy_on_accepted": 1.0,
+            "correct_material_yield": 0.999003984063745
+          },
+          {
+            "threshold": 0.8,
+            "accepted_material": 1003,
+            "accepted_correct": 1003,
+            "accepted_wrong": 0,
+            "accepted_empty": 0,
+            "coverage": 0.999003984063745,
+            "accuracy_on_accepted": 1.0,
+            "correct_material_yield": 0.999003984063745
+          },
+          {
+            "threshold": 0.85,
+            "accepted_material": 1003,
+            "accepted_correct": 1003,
+            "accepted_wrong": 0,
+            "accepted_empty": 0,
+            "coverage": 0.999003984063745,
+            "accuracy_on_accepted": 1.0,
+            "correct_material_yield": 0.999003984063745
+          },
+          {
+            "threshold": 0.9,
+            "accepted_material": 1003,
+            "accepted_correct": 1003,
+            "accepted_wrong": 0,
+            "accepted_empty": 0,
+            "coverage": 0.999003984063745,
+            "accuracy_on_accepted": 1.0,
+            "correct_material_yield": 0.999003984063745
+          },
+          {
+            "threshold": 0.95,
+            "accepted_material": 1003,
+            "accepted_correct": 1003,
+            "accepted_wrong": 0,
+            "accepted_empty": 0,
+            "coverage": 0.999003984063745,
+            "accuracy_on_accepted": 1.0,
+            "correct_material_yield": 0.999003984063745
+          }
+        ],
+        "confusion": [
+          [
+            180,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            199,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            188,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            205,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            232,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "empty_replay": {
+      "baseline": {
+        "n": 398,
+        "correct": 398,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "classes": {
+          "empty": {
+            "n": 398,
+            "correct": 398,
+            "recall": 1.0,
+            "precision": 1.0,
+            "f1": 1.0
+          }
+        },
+        "thresholds": [
+          {
+            "threshold": 0.7,
+            "accepted_material": 0,
+            "accepted_correct": 0,
+            "accepted_wrong": 0,
+            "accepted_empty": 398,
+            "coverage": 0.0,
+            "accuracy_on_accepted": null,
+            "correct_material_yield": 0.0
+          },
+          {
+            "threshold": 0.8,
+            "accepted_material": 0,
+            "accepted_correct": 0,
+            "accepted_wrong": 0,
+            "accepted_empty": 398,
+            "coverage": 0.0,
+            "accuracy_on_accepted": null,
+            "correct_material_yield": 0.0
+          },
+          {
+            "threshold": 0.85,
+            "accepted_material": 0,
+            "accepted_correct": 0,
+            "accepted_wrong": 0,
+            "accepted_empty": 398,
+            "coverage": 0.0,
+            "accuracy_on_accepted": null,
+            "correct_material_yield": 0.0
+          },
+          {
+            "threshold": 0.9,
+            "accepted_material": 0,
+            "accepted_correct": 0,
+            "accepted_wrong": 0,
+            "accepted_empty": 398,
+            "coverage": 0.0,
+            "accuracy_on_accepted": null,
+            "correct_material_yield": 0.0
+          },
+          {
+            "threshold": 0.95,
+            "accepted_material": 0,
+            "accepted_correct": 0,
+            "accepted_wrong": 0,
+            "accepted_empty": 398,
+            "coverage": 0.0,
+            "accuracy_on_accepted": null,
+            "correct_material_yield": 0.0
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            398
+          ]
+        ]
+      },
+      "augmented": {
+        "n": 398,
+        "correct": 398,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "classes": {
+          "empty": {
+            "n": 398,
+            "correct": 398,
+            "recall": 1.0,
+            "precision": 1.0,
+            "f1": 1.0
+          }
+        },
+        "thresholds": [
+          {
+            "threshold": 0.7,
+            "accepted_material": 0,
+            "accepted_correct": 0,
+            "accepted_wrong": 0,
+            "accepted_empty": 398,
+            "coverage": 0.0,
+            "accuracy_on_accepted": null,
+            "correct_material_yield": 0.0
+          },
+          {
+            "threshold": 0.8,
+            "accepted_material": 0,
+            "accepted_correct": 0,
+            "accepted_wrong": 0,
+            "accepted_empty": 398,
+            "coverage": 0.0,
+            "accuracy_on_accepted": null,
+            "correct_material_yield": 0.0
+          },
+          {
+            "threshold": 0.85,
+            "accepted_material": 0,
+            "accepted_correct": 0,
+            "accepted_wrong": 0,
+            "accepted_empty": 398,
+            "coverage": 0.0,
+            "accuracy_on_accepted": null,
+            "correct_material_yield": 0.0
+          },
+          {
+            "threshold": 0.9,
+            "accepted_material": 0,
+            "accepted_correct": 0,
+            "accepted_wrong": 0,
+            "accepted_empty": 398,
+            "coverage": 0.0,
+            "accuracy_on_accepted": null,
+            "correct_material_yield": 0.0
+          },
+          {
+            "threshold": 0.95,
+            "accepted_material": 0,
+            "accepted_correct": 0,
+            "accepted_wrong": 0,
+            "accepted_empty": 398,
+            "coverage": 0.0,
+            "accuracy_on_accepted": null,
+            "correct_material_yield": 0.0
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            398
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+﻿cohort,model,n,correct,top1_accuracy,macro_f1
+public_candidate,baseline,2052,838,0.4083820662768031,0.40375108279140404
+public_candidate,augmented,2052,814,0.3966861598440546,0.39162497787222816
+supplement_replay,baseline,1004,163,0.16235059760956175,0.22554678192447292
+supplement_replay,augmented,1004,1004,1.0,1.0
+empty_replay,baseline,398,398,1.0,1.0
+empty_replay,augmented,398,398,1.0,1.0
